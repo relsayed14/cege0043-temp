@@ -31,7 +31,7 @@ function startDataUpload () {
 	}
 
 	//now get the select box values
-	var language = document.getElementById("languageSelectBox").value;
+	var language = document.getElementById("languageselectbox").value;
 	postString = postString + "&language=" +language;
 
 	//process the string

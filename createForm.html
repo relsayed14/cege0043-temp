@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title> Simple Form Creation Example </title>
-	<script src="uploadData.js"></script>
 
 </head>
 <body>
@@ -33,10 +32,20 @@
 			<option>Other</option>
 		</select>
 		<br />
+
+		<p> Please insert your latitude and kongitude coordinates. You can use  https://www.latlong.net for assistance </p>
+		<label for="latitude">Latitude</label><input type="text" size="25" id="latitude"/><br />
+		<label for="longitude">Longitude</label><input type="text" size="25" id="longitude"/>
+
+
 	</div>
 
+	<!-- Uploading the responses-->
 	<button id="startUpload" onclick="startDataUpload()"> Start Data Upload</button>
 	<div id="dataUploadResult">The result of the upload goes here</div>
+
+	<!-- Referencing JS files -->
+	<script src="uploadData.js"></script>
 
 	
 </body>
