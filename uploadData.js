@@ -6,6 +6,20 @@ function startDataUpload () {
 	var moduleTitle = document.getElementById("moduleTitle").value;
 	var postString = "name="+name +"&surname="+surname+"&moduleTitle="+moduleTitle;
 	alert (postString);
+
+	// now get the checkbox values - separate them with a | so that they 
+	// can be split later if necessary
+	var checkString = "";
+	for (var i = 1; i<5; i++) {
+		// check if a check exists 
+		if (document.getElementById("check" + i).checked === true) {
+			// if checked, add the value of it then || to separate each one
+			checkString = checkString + document.getElementById("check" +i).value + "||"
+		}
+	}
+	// add it to the string
+	postString = postString + "&moduleTitleList="+checkString;
+
 	processData(postString);
 }
 
@@ -18,7 +32,7 @@ function processData(postString) {
 	//notify the server of the data type
 	client.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	client.onreadystatechange = dataUploaded;
-	client.send(postString)
+	client.send(postString);
 }
 
 //create the code to wait for the response from the data server
