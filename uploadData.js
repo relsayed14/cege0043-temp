@@ -28,7 +28,7 @@ function startDataUpload () {
 	if(document.getElementById("afternoon").checked) {
 		// if morning is checked, angdd it to the stri
 		postString = postString + "&lectureTime=afternoon";
-		
+	}
 	processData(postString);
 }
 
