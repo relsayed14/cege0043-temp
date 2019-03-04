@@ -22,13 +22,19 @@ function startDataUpload () {
 
 	// now get the radio button values
 	if(document.getElementById("morning").checked) {
-		// if morning is checked, angdd it to the stri
+		// if morning is checked, angdd it to the string
 		postString = postString + "&lectureTime=morning";
 	}
 	if(document.getElementById("afternoon").checked) {
-		// if morning is checked, angdd it to the stri
+		// if afternoon is checked, angdd it to the string
 		postString = postString + "&lectureTime=afternoon";
 	}
+
+	//now get the select box values
+	var language = document.getElementById("languageSelectBox").value;
+	postString = postString + "&language=" +language;
+
+	//process the string
 	processData(postString);
 }
 
