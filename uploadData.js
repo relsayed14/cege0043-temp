@@ -14,12 +14,21 @@ function startDataUpload () {
 		// check if a check exists 
 		if (document.getElementById("check" + i).checked === true) {
 			// if checked, add the value of it then || to separate each one
-			checkString = checkString + document.getElementById("check" +i).value + "||"
+			checkString = checkString + document.getElementById("check" +i).value + " || "
 		}
 	}
 	// add it to the string
 	postString = postString + "&moduleTitleList="+checkString;
 
+	// now get the radio button values
+	if(document.getElementById("morning").checked) {
+		// if morning is checked, angdd it to the stri
+		postString = postString + "&lectureTime=morning";
+	}
+	if(document.getElementById("afternoon").checked) {
+		// if morning is checked, angdd it to the stri
+		postString = postString + "&lectureTime=afternoon";
+		
 	processData(postString);
 }
 
